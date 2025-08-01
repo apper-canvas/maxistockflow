@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "productId": 1,
+    "quantity": 2,
+    "price": 79.99,
+    "timestamp": "2024-01-15T14:30:00Z"
+  },
+  {
+    "Id": 2,
+    "productId": 4,
+    "quantity": 1,
+    "price": 39.99,
+    "timestamp": "2024-01-15T15:45:00Z"
+  },
+  {
+    "Id": 3,
+    "productId": 7,
+    "quantity": 3,
+    "price": 9.99,
+    "timestamp": "2024-01-15T10:20:00Z"
+  },
+  {
+    "Id": 4,
+    "productId": 6,
+    "quantity": 1,
+    "price": 64.99,
+    "timestamp": "2024-01-14T16:30:00Z"
+  },
+  {
+    "Id": 5,
+    "productId": 2,
+    "quantity": 5,
+    "price": 12.99,
+    "timestamp": "2024-01-14T11:15:00Z"
+  },
+  {
+    "Id": 6,
+    "productId": 8,
+    "quantity": 1,
+    "price": 49.99,
+    "timestamp": "2024-01-13T13:45:00Z"
+  },
+  {
+    "Id": 7,
+    "productId": 10,
+    "quantity": 2,
+    "price": 54.99,
+    "timestamp": "2024-01-13T09:30:00Z"
+  },
+  {
+    "Id": 8,
+    "productId": 1,
+    "quantity": 1,
+    "price": 79.99,
+    "timestamp": "2024-01-12T14:20:00Z"
+  }
+]

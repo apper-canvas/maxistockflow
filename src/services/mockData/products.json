@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "name": "Wireless Bluetooth Headphones",
+    "sku": "WBH-001",
+    "price": 79.99,
+    "quantity": 45,
+    "lowStockThreshold": 10,
+    "lastUpdated": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "USB-C Charging Cable",
+    "sku": "USB-C-002",
+    "price": 12.99,
+    "quantity": 8,
+    "lowStockThreshold": 15,
+    "lastUpdated": "2024-01-14T14:20:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Smartphone Case - Clear",
+    "sku": "SPC-003",
+    "price": 24.99,
+    "quantity": 0,
+    "lowStockThreshold": 5,
+    "lastUpdated": "2024-01-13T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Portable Power Bank 10000mAh",
+    "sku": "PPB-004",
+    "price": 39.99,
+    "quantity": 23,
+    "lowStockThreshold": 8,
+    "lastUpdated": "2024-01-15T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Wireless Mouse - Ergonomic",
+    "sku": "WME-005",
+    "price": 29.99,
+    "quantity": 3,
+    "lowStockThreshold": 10,
+    "lastUpdated": "2024-01-12T11:30:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Bluetooth Speaker - Waterproof",
+    "sku": "BSW-006",
+    "price": 64.99,
+    "quantity": 18,
+    "lowStockThreshold": 5,
+    "lastUpdated": "2024-01-15T13:20:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Screen Protector - Tempered Glass",
+    "sku": "SPT-007",
+    "price": 9.99,
+    "quantity": 35,
+    "lowStockThreshold": 20,
+    "lastUpdated": "2024-01-14T08:45:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Laptop Stand - Adjustable",
+    "sku": "LSA-008",
+    "price": 49.99,
+    "quantity": 12,
+    "lowStockThreshold": 6,
+    "lastUpdated": "2024-01-15T12:10:00Z"
+  },
+  {
+    "Id": 9,
+    "name": "Gaming Keyboard - Mechanical",
+    "sku": "GKM-009",
+    "price": 89.99,
+    "quantity": 0,
+    "lowStockThreshold": 4,
+    "lastUpdated": "2024-01-11T15:30:00Z"
+  },
+  {
+    "Id": 10,
+    "name": "Webcam HD 1080p",
+    "sku": "WHD-010",
+    "price": 54.99,
+    "quantity": 7,
+    "lowStockThreshold": 8,
+    "lastUpdated": "2024-01-14T17:25:00Z"
+  }
+]
