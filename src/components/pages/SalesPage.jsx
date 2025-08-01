@@ -95,7 +95,7 @@ const SalesPage = () => {
     }
 
     try {
-      // Process each sale item
+// Process each sale item
       for (const item of cartItems) {
         await saleService.create({
           productId: item.Id,
@@ -106,8 +106,11 @@ const SalesPage = () => {
         // Update product quantity
         const updatedQuantity = item.quantity - item.saleQuantity;
         await productService.update(item.Id, {
-          ...item,
+          name: item.name,
+          sku: item.sku,
+          price: item.price,
           quantity: updatedQuantity,
+          lowStockThreshold: item.lowStockThreshold,
         });
       }
 

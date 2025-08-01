@@ -26,10 +26,10 @@ const InventoryPage = () => {
     loadProducts();
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
     const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.sku.toLowerCase().includes(searchTerm.toLowerCase())
+      product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.sku?.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
   }, [products, searchTerm]);

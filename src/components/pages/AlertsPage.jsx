@@ -33,25 +33,25 @@ const AlertsPage = () => {
     }
   };
 
-  const getFilteredProducts = () => {
+const getFilteredProducts = () => {
     switch (filter) {
       case "out-of-stock":
-        return products.filter(product => product.quantity === 0);
+        return products.filter(product => (product.quantity || 0) === 0);
       case "low-stock":
         return products.filter(product => 
-          product.quantity > 0 && product.quantity <= product.lowStockThreshold
+          (product.quantity || 0) > 0 && (product.quantity || 0) <= (product.lowStockThreshold || 0)
         );
       default:
         return products.filter(product => 
-          product.quantity <= product.lowStockThreshold
+          (product.quantity || 0) <= (product.lowStockThreshold || 0)
         );
     }
   };
 
-  const getAlertStats = () => {
-    const outOfStock = products.filter(product => product.quantity === 0);
+const getAlertStats = () => {
+    const outOfStock = products.filter(product => (product.quantity || 0) === 0);
     const lowStock = products.filter(product => 
-      product.quantity > 0 && product.quantity <= product.lowStockThreshold
+      (product.quantity || 0) > 0 && (product.quantity || 0) <= (product.lowStockThreshold || 0)
     );
     const totalAlerts = outOfStock.length + lowStock.length;
 
@@ -62,15 +62,15 @@ const AlertsPage = () => {
     };
   };
 
-  const getAlertType = (product) => {
-    if (product.quantity === 0) return "critical";
-    if (product.quantity <= product.lowStockThreshold) return "warning";
+const getAlertType = (product) => {
+    if ((product.quantity || 0) === 0) return "critical";
+    if ((product.quantity || 0) <= (product.lowStockThreshold || 0)) return "warning";
     return "success";
   };
 
   const getAlertMessage = (product) => {
-    if (product.quantity === 0) return "Out of stock - immediate attention required";
-    if (product.quantity <= product.lowStockThreshold) return "Low stock - consider reordering soon";
+    if ((product.quantity || 0) === 0) return "Out of stock - immediate attention required";
+    if ((product.quantity || 0) <= (product.lowStockThreshold || 0)) return "Low stock - consider reordering soon";
     return "Stock level normal";
   };
 
@@ -186,36 +186,36 @@ const AlertsPage = () => {
                       </div>
                       
                       <div className="flex-1">
-                        <div className="flex items-center space-x-3">
-                          <h3 className="font-medium text-slate-900">{product.name}</h3>
+<div className="flex items-center space-x-3">
+                          <h3 className="font-medium text-slate-900">{product.name || 'N/A'}</h3>
                           <Badge variant={alertType === "critical" ? "error" : "warning"}>
-                            {product.quantity === 0 ? "Out of Stock" : "Low Stock"}
+                            {(product.quantity || 0) === 0 ? "Out of Stock" : "Low Stock"}
                           </Badge>
                         </div>
-                        <p className="text-sm text-slate-600 mt-1">SKU: {product.sku}</p>
+                        <p className="text-sm text-slate-600 mt-1">SKU: {product.sku || 'N/A'}</p>
                         <p className="text-sm text-slate-600">{alertMessage}</p>
                       </div>
                     </div>
                     
                     <div className="text-right min-w-[200px]">
                       <div className="flex items-center justify-end space-x-4 mb-2">
-                        <span className="text-sm text-slate-600">Current Stock:</span>
+<span className="text-sm text-slate-600">Current Stock:</span>
                         <span className={`font-medium ${
-                          product.quantity === 0 ? "text-error-600" : 
-                          product.quantity <= product.lowStockThreshold ? "text-warning-600" : "text-success-600"
+                          (product.quantity || 0) === 0 ? "text-error-600" : 
+                          (product.quantity || 0) <= (product.lowStockThreshold || 0) ? "text-warning-600" : "text-success-600"
                         }`}>
-                          {product.quantity} units
+                          {product.quantity || 0} units
                         </span>
                       </div>
-                      <StockIndicator 
-                        quantity={product.quantity} 
-                        lowStockThreshold={product.lowStockThreshold} 
+<StockIndicator 
+                        quantity={product.quantity || 0} 
+                        lowStockThreshold={product.lowStockThreshold || 0} 
                       />
                       <p className="text-xs text-slate-500 mt-1">
-                        Threshold: {product.lowStockThreshold} units
+                        Threshold: {product.lowStockThreshold || 0} units
                       </p>
                       <p className="text-xs text-slate-500">
-                        Updated: {format(new Date(product.lastUpdated), "MMM d, yyyy")}
+                        Updated: {format(new Date(product.lastUpdated || new Date()), "MMM d, yyyy")}
                       </p>
                     </div>
                   </div>

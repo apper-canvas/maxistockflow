@@ -37,10 +37,10 @@ const SaleCart = ({ cartItems, onUpdateQuantity, onRemoveItem, onClearCart, onPr
         {cartItems.map((item) => (
           <div key={item.Id} className="p-4 border-b border-slate-100 last:border-b-0">
             <div className="flex items-center justify-between">
-              <div className="flex-1">
-                <h4 className="font-medium text-slate-900">{item.name}</h4>
-                <p className="text-sm text-slate-600">{item.sku}</p>
-                <p className="text-sm font-medium text-slate-900">${item.price.toFixed(2)} each</p>
+<div className="flex-1">
+                <h4 className="font-medium text-slate-900">{item.name || 'N/A'}</h4>
+                <p className="text-sm text-slate-600">{item.sku || 'N/A'}</p>
+                <p className="text-sm font-medium text-slate-900">${(item.price || 0).toFixed(2)} each</p>
               </div>
               
               <div className="flex items-center space-x-2">
@@ -75,12 +75,12 @@ const SaleCart = ({ cartItems, onUpdateQuantity, onRemoveItem, onClearCart, onPr
               </div>
             </div>
             
-            <div className="flex justify-between items-center mt-2">
+<div className="flex justify-between items-center mt-2">
               <span className="text-sm text-slate-600">
-                Available: {item.quantity - item.saleQuantity}
+                Available: {(item.quantity || 0) - (item.saleQuantity || 0)}
               </span>
               <span className="font-medium text-slate-900">
-                ${(item.price * item.saleQuantity).toFixed(2)}
+                ${((item.price || 0) * (item.saleQuantity || 0)).toFixed(2)}
               </span>
             </div>
           </div>
